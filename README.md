@@ -4,7 +4,7 @@
 
 > **[📋 在线查看治理报告](https://3c3051b2b06549f4b17e0991cf1de926.bj8.agentos-app.net)** — 基于真实 40 条 FAQ 数据和业务规则摘要的检测结果
 
-> **[📋 本地查看治理报告]** — /reports/governance_report_20260811_144310.html
+> 📋 本地查看治理报告路径地址— /reports/governance_report_20260811_144310.html
 
 ## 一、问题分类体系
 
