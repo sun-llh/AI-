@@ -2,6 +2,8 @@
 
 > 智能客服知识库"体检"工具：自动扫描 FAQ 条目，标记问题条目，生成可交付业务方的治理报告。
 
+> **[📋 在线查看治理报告](https://3c3051b2b06549f4b17e0991cf1de926.bj8.agentos-app.net)** — 基于真实 40 条 FAQ 数据和业务规则摘要的检测结果
+
 ## 一、问题分类体系
 
 基于知识库数据特征，定义 **8 类问题**，按严重程度分为三个等级：
@@ -232,6 +234,10 @@ python main.py --input data/real_kb_articles.json --context data/business_contex
 
 - `reports/governance_report_YYYYMMDD_HHMMSS.html` — 可视化治理报告
 - `reports/governance_report_YYYYMMDD_HHMMSS.json` — 结构化数据报告
+
+> 本次运行报告：
+> - **[在线 HTML 报告](https://3c3051b2b06549f4b17e0991cf1de926.bj8.agentos-app.net)**
+> - 本地文件：`reports/governance_report_20260811_144310.html` / `.json`
 
 ## 七、项目结构
 
