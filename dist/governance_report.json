@@ -1,0 +1,794 @@
+{
+  "generated_at": "2026-08-11T14:43:10.249467",
+  "detection_stats": {
+    "total_entries": 40,
+    "problem_entry_count": 15,
+    "normal_entry_count": 25,
+    "total_issues": 17,
+    "by_type": {
+      "outdated": 11,
+      "incomplete": 2,
+      "duplicate": 2,
+      "contradiction": 1,
+      "vague": 1
+    },
+    "by_severity": {
+      "critical": 11,
+      "major": 4,
+      "minor": 2
+    },
+    "by_category": {
+      "退货政策": 5,
+      "物流": 3,
+      "支付": 1,
+      "发票": 2,
+      "会员": 1,
+      "优惠": 2,
+      "客服": 1,
+      "售后": 1,
+      "账号": 1
+    },
+    "by_method": {
+      "rule": 16,
+      "llm": 1
+    }
+  },
+  "problem_entries": {
+    "KB002": [
+      {
+        "entry_id": "KB002",
+        "question": "退货运费谁出？",
+        "category": "退货政策",
+        "problem_type": "outdated",
+        "issue_detail": "业务规则冲突：非质量问题退货运费买家承担。当前答案「所有退货的运费都由商家承担，您不需要支付任何费用。...」与业务规则矛盾（匹配模式：所有退货.*运费.*商家承担）",
+        "severity": "critical",
+        "detection_method": "rule"
+      }
+    ],
+    "KB005": [
+      {
+        "entry_id": "KB005",
+        "question": "多久能发货？",
+        "category": "物流",
+        "problem_type": "outdated",
+        "issue_detail": "业务规则冲突：发货时间24小时内。当前答案「下单后48小时内发货，使用顺丰快递，大部分地区2-3天到货。...」与业务规则矛盾（匹配模式：48小时）",
+        "severity": "critical",
+        "detection_method": "rule"
+      }
+    ],
+    "KB006": [
+      {
+        "entry_id": "KB006",
+        "question": "用的什么快递？",
+        "category": "物流",
+        "problem_type": "outdated",
+        "issue_detail": "业务规则冲突：合作快递为中通、韵达、圆通。当前答案「我们使用顺丰快递发货，部分地区可能使用中通快递。...」与业务规则矛盾（匹配模式：顺丰）",
+        "severity": "critical",
+        "detection_method": "rule"
+      }
+    ],
+    "KB008": [
+      {
+        "entry_id": "KB008",
+        "question": "可以货到付款吗？",
+        "category": "支付",
+        "problem_type": "outdated",
+        "issue_detail": "业务规则冲突：不支持货到付款。当前答案「支持的，我们支持货到付款，快递员送到时直接付款即可。...」与业务规则矛盾（匹配模式：支持货到付款）",
+        "severity": "critical",
+        "detection_method": "rule"
+      }
+    ],
+    "KB010": [
+      {
+        "entry_id": "KB010",
+        "question": "可以开发票吗？",
+        "category": "发票",
+        "problem_type": "outdated",
+        "issue_detail": "业务规则冲突：仅支持电子发票，不支持纸质发票。当前答案「支持电子发票和纸质发票，下单时在备注中填写发票抬头和税号。...」与业务规则矛盾（匹配模式：纸质发票）",
+        "severity": "critical",
+        "detection_method": "rule"
+      }
+    ],
+    "KB011": [
+      {
+        "entry_id": "KB011",
+        "question": "怎么申请发票？",
+        "category": "发票",
+        "problem_type": "outdated",
+        "issue_detail": "业务规则冲突：仅支持电子发票，不支持纸质发票。当前答案「下单时在备注中填写发票抬头和税号，我们会在发货时一起寄出纸质发票。...」与业务规则矛盾（匹配模式：纸质发票）",
+        "severity": "critical",
+        "detection_method": "rule"
+      }
+    ],
+    "KB012": [
+      {
+        "entry_id": "KB012",
+        "question": "会员有什么优惠？",
+        "category": "会员",
+        "problem_type": "outdated",
+        "issue_detail": "业务规则冲突：银卡会员门槛为累计消费满2000元享95折。当前答案「我们有三档会员：普通会员无折扣；银卡会员（累计消费满1000元）享9折；金卡会员...」与业务规则矛盾（匹配模式：银卡.*1000元）",
+        "severity": "critical",
+        "detection_method": "rule"
+      }
+    ],
+    "KB014": [
+      {
+        "entry_id": "KB014",
+        "question": "有优惠券吗？",
+        "category": "优惠",
+        "problem_type": "outdated",
+        "issue_detail": "业务规则冲突：当前优惠券为满200减20、满500减60。当前答案「当前有满300减50和满600减120两种优惠券，可以在'我的优惠券'页面领取。...」与业务规则矛盾（匹配模式：满300减50）",
+        "severity": "major",
+        "detection_method": "rule"
+      }
+    ],
+    "KB015": [
+      {
+        "entry_id": "KB015",
+        "question": "优惠券可以叠加使用吗？",
+        "category": "优惠",
+        "problem_type": "outdated",
+        "issue_detail": "业务规则冲突：优惠券不叠加使用。当前答案「可以的，每笔订单最多叠加3张优惠券。...」与业务规则矛盾（匹配模式：最多叠加）",
+        "severity": "critical",
+        "detection_method": "rule"
+      }
+    ],
+    "KB016": [
+      {
+        "entry_id": "KB016",
+        "question": "在线客服工作时间？",
+        "category": "客服",
+        "problem_type": "outdated",
+        "issue_detail": "业务规则冲突：在线客服9:00-22:00。当前答案「在线客服7x24小时全天候服务，随时可以咨询。...」与业务规则矛盾（匹配模式：7x24）",
+        "severity": "critical",
+        "detection_method": "rule"
+      }
+    ],
+    "KB032": [
+      {
+        "entry_id": "KB032",
+        "question": "商品有保修吗？",
+        "category": "售后",
+        "problem_type": "incomplete",
+        "issue_detail": "规则匹配：回答为空，完全未提供任何信息",
+        "severity": "major",
+        "detection_method": "rule"
+      }
+    ],
+    "KB037": [
+      {
+        "entry_id": "KB037",
+        "question": "怎么注销账号？",
+        "category": "账号",
+        "problem_type": "incomplete",
+        "issue_detail": "规则匹配：回答为空，完全未提供任何信息",
+        "severity": "major",
+        "detection_method": "rule"
+      }
+    ],
+    "KB039": [
+      {
+        "entry_id": "KB039",
+        "question": "退货政策是什么？",
+        "category": "退货政策",
+        "problem_type": "outdated",
+        "issue_detail": "业务规则冲突：普通商品7天无理由退货。当前答案「支持30天无理由退货，所有退货运费商家承担。...」与业务规则矛盾（匹配模式：30天无理由）",
+        "severity": "critical",
+        "detection_method": "rule"
+      },
+      {
+        "entry_id": "KB039",
+        "question": "退货政策是什么？",
+        "category": "退货政策",
+        "problem_type": "duplicate",
+        "issue_detail": "与条目 KB001（「退货政策是什么？...」）高度重复（问题相似度100%，答案相似度56%）",
+        "severity": "minor",
+        "detection_method": "rule"
+      }
+    ],
+    "KB001": [
+      {
+        "entry_id": "KB001",
+        "question": "退货政策是什么？",
+        "category": "退货政策",
+        "problem_type": "duplicate",
+        "issue_detail": "与条目 KB039（「退货政策是什么？...」）高度重复（问题相似度100%，答案相似度56%）",
+        "severity": "minor",
+        "detection_method": "rule"
+      },
+      {
+        "entry_id": "KB001",
+        "question": "退货政策是什么？",
+        "category": "退货政策",
+        "problem_type": "contradiction",
+        "issue_detail": "与条目 KB039（「退货政策是什么？...」）对相似问题给出不同答案，数值差异: KB001含{'7', '30'}, KB039含{'30'}",
+        "severity": "critical",
+        "detection_method": "rule",
+        "related_entry": "KB039"
+      }
+    ],
+    "KB026": [
+      {
+        "entry_id": "KB026",
+        "question": "预售商品什么时候发货？",
+        "category": "物流",
+        "problem_type": "vague",
+        "issue_detail": "[LLM] 语义分析：回答缺少具体数据、操作步骤或明确指引，信息密度低",
+        "severity": "major",
+        "detection_method": "llm"
+      }
+    ]
+  },
+  "all_results": [
+    {
+      "entry_id": "KB002",
+      "question": "退货运费谁出？",
+      "category": "退货政策",
+      "problem_type": "outdated",
+      "issue_detail": "业务规则冲突：非质量问题退货运费买家承担。当前答案「所有退货的运费都由商家承担，您不需要支付任何费用。...」与业务规则矛盾（匹配模式：所有退货.*运费.*商家承担）",
+      "severity": "critical",
+      "detection_method": "rule"
+    },
+    {
+      "entry_id": "KB005",
+      "question": "多久能发货？",
+      "category": "物流",
+      "problem_type": "outdated",
+      "issue_detail": "业务规则冲突：发货时间24小时内。当前答案「下单后48小时内发货，使用顺丰快递，大部分地区2-3天到货。...」与业务规则矛盾（匹配模式：48小时）",
+      "severity": "critical",
+      "detection_method": "rule"
+    },
+    {
+      "entry_id": "KB006",
+      "question": "用的什么快递？",
+      "category": "物流",
+      "problem_type": "outdated",
+      "issue_detail": "业务规则冲突：合作快递为中通、韵达、圆通。当前答案「我们使用顺丰快递发货，部分地区可能使用中通快递。...」与业务规则矛盾（匹配模式：顺丰）",
+      "severity": "critical",
+      "detection_method": "rule"
+    },
+    {
+      "entry_id": "KB008",
+      "question": "可以货到付款吗？",
+      "category": "支付",
+      "problem_type": "outdated",
+      "issue_detail": "业务规则冲突：不支持货到付款。当前答案「支持的，我们支持货到付款，快递员送到时直接付款即可。...」与业务规则矛盾（匹配模式：支持货到付款）",
+      "severity": "critical",
+      "detection_method": "rule"
+    },
+    {
+      "entry_id": "KB010",
+      "question": "可以开发票吗？",
+      "category": "发票",
+      "problem_type": "outdated",
+      "issue_detail": "业务规则冲突：仅支持电子发票，不支持纸质发票。当前答案「支持电子发票和纸质发票，下单时在备注中填写发票抬头和税号。...」与业务规则矛盾（匹配模式：纸质发票）",
+      "severity": "critical",
+      "detection_method": "rule"
+    },
+    {
+      "entry_id": "KB011",
+      "question": "怎么申请发票？",
+      "category": "发票",
+      "problem_type": "outdated",
+      "issue_detail": "业务规则冲突：仅支持电子发票，不支持纸质发票。当前答案「下单时在备注中填写发票抬头和税号，我们会在发货时一起寄出纸质发票。...」与业务规则矛盾（匹配模式：纸质发票）",
+      "severity": "critical",
+      "detection_method": "rule"
+    },
+    {
+      "entry_id": "KB012",
+      "question": "会员有什么优惠？",
+      "category": "会员",
+      "problem_type": "outdated",
+      "issue_detail": "业务规则冲突：银卡会员门槛为累计消费满2000元享95折。当前答案「我们有三档会员：普通会员无折扣；银卡会员（累计消费满1000元）享9折；金卡会员...」与业务规则矛盾（匹配模式：银卡.*1000元）",
+      "severity": "critical",
+      "detection_method": "rule"
+    },
+    {
+      "entry_id": "KB014",
+      "question": "有优惠券吗？",
+      "category": "优惠",
+      "problem_type": "outdated",
+      "issue_detail": "业务规则冲突：当前优惠券为满200减20、满500减60。当前答案「当前有满300减50和满600减120两种优惠券，可以在'我的优惠券'页面领取。...」与业务规则矛盾（匹配模式：满300减50）",
+      "severity": "major",
+      "detection_method": "rule"
+    },
+    {
+      "entry_id": "KB015",
+      "question": "优惠券可以叠加使用吗？",
+      "category": "优惠",
+      "problem_type": "outdated",
+      "issue_detail": "业务规则冲突：优惠券不叠加使用。当前答案「可以的，每笔订单最多叠加3张优惠券。...」与业务规则矛盾（匹配模式：最多叠加）",
+      "severity": "critical",
+      "detection_method": "rule"
+    },
+    {
+      "entry_id": "KB016",
+      "question": "在线客服工作时间？",
+      "category": "客服",
+      "problem_type": "outdated",
+      "issue_detail": "业务规则冲突：在线客服9:00-22:00。当前答案「在线客服7x24小时全天候服务，随时可以咨询。...」与业务规则矛盾（匹配模式：7x24）",
+      "severity": "critical",
+      "detection_method": "rule"
+    },
+    {
+      "entry_id": "KB032",
+      "question": "商品有保修吗？",
+      "category": "售后",
+      "problem_type": "incomplete",
+      "issue_detail": "规则匹配：回答为空，完全未提供任何信息",
+      "severity": "major",
+      "detection_method": "rule"
+    },
+    {
+      "entry_id": "KB037",
+      "question": "怎么注销账号？",
+      "category": "账号",
+      "problem_type": "incomplete",
+      "issue_detail": "规则匹配：回答为空，完全未提供任何信息",
+      "severity": "major",
+      "detection_method": "rule"
+    },
+    {
+      "entry_id": "KB039",
+      "question": "退货政策是什么？",
+      "category": "退货政策",
+      "problem_type": "outdated",
+      "issue_detail": "业务规则冲突：普通商品7天无理由退货。当前答案「支持30天无理由退货，所有退货运费商家承担。...」与业务规则矛盾（匹配模式：30天无理由）",
+      "severity": "critical",
+      "detection_method": "rule"
+    },
+    {
+      "entry_id": "KB001",
+      "question": "退货政策是什么？",
+      "category": "退货政策",
+      "problem_type": "duplicate",
+      "issue_detail": "与条目 KB039（「退货政策是什么？...」）高度重复（问题相似度100%，答案相似度56%）",
+      "severity": "minor",
+      "detection_method": "rule"
+    },
+    {
+      "entry_id": "KB039",
+      "question": "退货政策是什么？",
+      "category": "退货政策",
+      "problem_type": "duplicate",
+      "issue_detail": "与条目 KB001（「退货政策是什么？...」）高度重复（问题相似度100%，答案相似度56%）",
+      "severity": "minor",
+      "detection_method": "rule"
+    },
+    {
+      "entry_id": "KB001",
+      "question": "退货政策是什么？",
+      "category": "退货政策",
+      "problem_type": "contradiction",
+      "issue_detail": "与条目 KB039（「退货政策是什么？...」）对相似问题给出不同答案，数值差异: KB001含{'7', '30'}, KB039含{'30'}",
+      "severity": "critical",
+      "detection_method": "rule",
+      "related_entry": "KB039"
+    },
+    {
+      "entry_id": "KB026",
+      "question": "预售商品什么时候发货？",
+      "category": "物流",
+      "problem_type": "vague",
+      "issue_detail": "[LLM] 语义分析：回答缺少具体数据、操作步骤或明确指引，信息密度低",
+      "severity": "major",
+      "detection_method": "llm"
+    }
+  ],
+  "governance_suggestions": [
+    {
+      "entry_id": "KB001",
+      "question": "退货政策是什么？",
+      "category": "退货政策",
+      "problem_types": [
+        "duplicate",
+        "contradiction"
+      ],
+      "problem_details": [
+        "[内容重复] 与条目 KB039（「退货政策是什么？...」）高度重复（问题相似度100%，答案相似度56%）",
+        "[条目矛盾] 与条目 KB039（「退货政策是什么？...」）对相似问题给出不同答案，数值差异: KB001含{'7', '30'}, KB039含{'30'}"
+      ],
+      "action": "修改",
+      "suggestion": "该条目存在2类问题（内容重复, 条目矛盾）。建议优先解决最严重的问题：核实正确信息后统一口径。建议以最新政策为准，修改矛盾的条目使其一致。对于涉及数值（如天数、金额、门槛）的矛盾，需与业务方确认当前正确值。同时建议建立知识库编辑审核流程，避免新增矛盾。",
+      "priority": 6,
+      "priority_label": "P1-高",
+      "answer_preview": "我们支持7天无理由退货，质量问题30天内可退换。非质量问题退货运费由买家承担。"
+    },
+    {
+      "entry_id": "KB039",
+      "question": "退货政策是什么？",
+      "category": "退货政策",
+      "problem_types": [
+        "duplicate",
+        "outdated"
+      ],
+      "problem_details": [
+        "[内容过时] 业务规则冲突：普通商品7天无理由退货。当前答案「支持30天无理由退货，所有退货运费商家承担。...」与业务规则矛盾（匹配模式：30天无理由）",
+        "[内容重复] 与条目 KB001（「退货政策是什么？...」）高度重复（问题相似度100%，答案相似度56%）"
+      ],
+      "action": "修改",
+      "suggestion": "该条目存在2类问题（内容重复, 内容过时）。建议优先解决最严重的问题：更新为当前有效的活动信息、政策或产品名称。建议建立定期巡检机制，每季度检查涉及活动、价格、政策的条目。如活动已结束，应更新为通用说明或标注「该活动已结束」。",
+      "priority": 5,
+      "priority_label": "P2-中",
+      "answer_preview": "支持30天无理由退货，所有退货运费商家承担。"
+    },
+    {
+      "entry_id": "KB002",
+      "question": "退货运费谁出？",
+      "category": "退货政策",
+      "problem_types": [
+        "outdated"
+      ],
+      "problem_details": [
+        "[内容过时] 业务规则冲突：非质量问题退货运费买家承担。当前答案「所有退货的运费都由商家承担，您不需要支付任何费用。...」与业务规则矛盾（匹配模式：所有退货.*运费.*商家承担）"
+      ],
+      "action": "修改",
+      "suggestion": "更新为当前有效的活动信息、政策或产品名称。建议建立定期巡检机制，每季度检查涉及活动、价格、政策的条目。如活动已结束，应更新为通用说明或标注「该活动已结束」。",
+      "priority": 3,
+      "priority_label": "P3-低",
+      "answer_preview": "所有退货的运费都由商家承担，您不需要支付任何费用。"
+    },
+    {
+      "entry_id": "KB005",
+      "question": "多久能发货？",
+      "category": "物流",
+      "problem_types": [
+        "outdated"
+      ],
+      "problem_details": [
+        "[内容过时] 业务规则冲突：发货时间24小时内。当前答案「下单后48小时内发货，使用顺丰快递，大部分地区2-3天到货。...」与业务规则矛盾（匹配模式：48小时）"
+      ],
+      "action": "修改",
+      "suggestion": "更新为当前有效的活动信息、政策或产品名称。建议建立定期巡检机制，每季度检查涉及活动、价格、政策的条目。如活动已结束，应更新为通用说明或标注「该活动已结束」。",
+      "priority": 3,
+      "priority_label": "P3-低",
+      "answer_preview": "下单后48小时内发货，使用顺丰快递，大部分地区2-3天到货。"
+    },
+    {
+      "entry_id": "KB006",
+      "question": "用的什么快递？",
+      "category": "物流",
+      "problem_types": [
+        "outdated"
+      ],
+      "problem_details": [
+        "[内容过时] 业务规则冲突：合作快递为中通、韵达、圆通。当前答案「我们使用顺丰快递发货，部分地区可能使用中通快递。...」与业务规则矛盾（匹配模式：顺丰）"
+      ],
+      "action": "修改",
+      "suggestion": "更新为当前有效的活动信息、政策或产品名称。建议建立定期巡检机制，每季度检查涉及活动、价格、政策的条目。如活动已结束，应更新为通用说明或标注「该活动已结束」。",
+      "priority": 3,
+      "priority_label": "P3-低",
+      "answer_preview": "我们使用顺丰快递发货，部分地区可能使用中通快递。"
+    },
+    {
+      "entry_id": "KB008",
+      "question": "可以货到付款吗？",
+      "category": "支付",
+      "problem_types": [
+        "outdated"
+      ],
+      "problem_details": [
+        "[内容过时] 业务规则冲突：不支持货到付款。当前答案「支持的，我们支持货到付款，快递员送到时直接付款即可。...」与业务规则矛盾（匹配模式：支持货到付款）"
+      ],
+      "action": "修改",
+      "suggestion": "更新为当前有效的活动信息、政策或产品名称。建议建立定期巡检机制，每季度检查涉及活动、价格、政策的条目。如活动已结束，应更新为通用说明或标注「该活动已结束」。",
+      "priority": 3,
+      "priority_label": "P3-低",
+      "answer_preview": "支持的，我们支持货到付款，快递员送到时直接付款即可。"
+    },
+    {
+      "entry_id": "KB010",
+      "question": "可以开发票吗？",
+      "category": "发票",
+      "problem_types": [
+        "outdated"
+      ],
+      "problem_details": [
+        "[内容过时] 业务规则冲突：仅支持电子发票，不支持纸质发票。当前答案「支持电子发票和纸质发票，下单时在备注中填写发票抬头和税号。...」与业务规则矛盾（匹配模式：纸质发票）"
+      ],
+      "action": "修改",
+      "suggestion": "更新为当前有效的活动信息、政策或产品名称。建议建立定期巡检机制，每季度检查涉及活动、价格、政策的条目。如活动已结束，应更新为通用说明或标注「该活动已结束」。",
+      "priority": 3,
+      "priority_label": "P3-低",
+      "answer_preview": "支持电子发票和纸质发票，下单时在备注中填写发票抬头和税号。"
+    },
+    {
+      "entry_id": "KB011",
+      "question": "怎么申请发票？",
+      "category": "发票",
+      "problem_types": [
+        "outdated"
+      ],
+      "problem_details": [
+        "[内容过时] 业务规则冲突：仅支持电子发票，不支持纸质发票。当前答案「下单时在备注中填写发票抬头和税号，我们会在发货时一起寄出纸质发票。...」与业务规则矛盾（匹配模式：纸质发票）"
+      ],
+      "action": "修改",
+      "suggestion": "更新为当前有效的活动信息、政策或产品名称。建议建立定期巡检机制，每季度检查涉及活动、价格、政策的条目。如活动已结束，应更新为通用说明或标注「该活动已结束」。",
+      "priority": 3,
+      "priority_label": "P3-低",
+      "answer_preview": "下单时在备注中填写发票抬头和税号，我们会在发货时一起寄出纸质发票。"
+    },
+    {
+      "entry_id": "KB012",
+      "question": "会员有什么优惠？",
+      "category": "会员",
+      "problem_types": [
+        "outdated"
+      ],
+      "problem_details": [
+        "[内容过时] 业务规则冲突：银卡会员门槛为累计消费满2000元享95折。当前答案「我们有三档会员：普通会员无折扣；银卡会员（累计消费满1000元）享9折；金卡会员...」与业务规则矛盾（匹配模式：银卡.*1000元）"
+      ],
+      "action": "修改",
+      "suggestion": "更新为当前有效的活动信息、政策或产品名称。建议建立定期巡检机制，每季度检查涉及活动、价格、政策的条目。如活动已结束，应更新为通用说明或标注「该活动已结束」。",
+      "priority": 3,
+      "priority_label": "P3-低",
+      "answer_preview": "我们有三档会员：普通会员无折扣；银卡会员（累计消费满1000元）享9折；金卡会员（累计消费满5000元）享85折加优先客服。"
+    },
+    {
+      "entry_id": "KB015",
+      "question": "优惠券可以叠加使用吗？",
+      "category": "优惠",
+      "problem_types": [
+        "outdated"
+      ],
+      "problem_details": [
+        "[内容过时] 业务规则冲突：优惠券不叠加使用。当前答案「可以的，每笔订单最多叠加3张优惠券。...」与业务规则矛盾（匹配模式：最多叠加）"
+      ],
+      "action": "修改",
+      "suggestion": "更新为当前有效的活动信息、政策或产品名称。建议建立定期巡检机制，每季度检查涉及活动、价格、政策的条目。如活动已结束，应更新为通用说明或标注「该活动已结束」。",
+      "priority": 3,
+      "priority_label": "P3-低",
+      "answer_preview": "可以的，每笔订单最多叠加3张优惠券。"
+    },
+    {
+      "entry_id": "KB016",
+      "question": "在线客服工作时间？",
+      "category": "客服",
+      "problem_types": [
+        "outdated"
+      ],
+      "problem_details": [
+        "[内容过时] 业务规则冲突：在线客服9:00-22:00。当前答案「在线客服7x24小时全天候服务，随时可以咨询。...」与业务规则矛盾（匹配模式：7x24）"
+      ],
+      "action": "修改",
+      "suggestion": "更新为当前有效的活动信息、政策或产品名称。建议建立定期巡检机制，每季度检查涉及活动、价格、政策的条目。如活动已结束，应更新为通用说明或标注「该活动已结束」。",
+      "priority": 3,
+      "priority_label": "P3-低",
+      "answer_preview": "在线客服7x24小时全天候服务，随时可以咨询。"
+    },
+    {
+      "entry_id": "KB014",
+      "question": "有优惠券吗？",
+      "category": "优惠",
+      "problem_types": [
+        "outdated"
+      ],
+      "problem_details": [
+        "[内容过时] 业务规则冲突：当前优惠券为满200减20、满500减60。当前答案「当前有满300减50和满600减120两种优惠券，可以在'我的优惠券'页面领取。...」与业务规则矛盾（匹配模式：满300减50）"
+      ],
+      "action": "修改",
+      "suggestion": "更新为当前有效的活动信息、政策或产品名称。建议建立定期巡检机制，每季度检查涉及活动、价格、政策的条目。如活动已结束，应更新为通用说明或标注「该活动已结束」。",
+      "priority": 2,
+      "priority_label": "P3-低",
+      "answer_preview": "当前有满300减50和满600减120两种优惠券，可以在'我的优惠券'页面领取。"
+    },
+    {
+      "entry_id": "KB032",
+      "question": "商品有保修吗？",
+      "category": "售后",
+      "problem_types": [
+        "incomplete"
+      ],
+      "problem_details": [
+        "[回答不完整] 规则匹配：回答为空，完全未提供任何信息"
+      ],
+      "action": "修改",
+      "suggestion": "补充回答中缺失的关键信息。建议参考同分类下信息完整的条目，确保覆盖问题的所有方面。对于操作类问题，应提供分步骤说明。",
+      "priority": 2,
+      "priority_label": "P3-低",
+      "answer_preview": ""
+    },
+    {
+      "entry_id": "KB037",
+      "question": "怎么注销账号？",
+      "category": "账号",
+      "problem_types": [
+        "incomplete"
+      ],
+      "problem_details": [
+        "[回答不完整] 规则匹配：回答为空，完全未提供任何信息"
+      ],
+      "action": "修改",
+      "suggestion": "补充回答中缺失的关键信息。建议参考同分类下信息完整的条目，确保覆盖问题的所有方面。对于操作类问题，应提供分步骤说明。",
+      "priority": 2,
+      "priority_label": "P3-低",
+      "answer_preview": ""
+    },
+    {
+      "entry_id": "KB026",
+      "question": "预售商品什么时候发货？",
+      "category": "物流",
+      "problem_types": [
+        "vague"
+      ],
+      "problem_details": [
+        "[信息模糊] [LLM] 语义分析：回答缺少具体数据、操作步骤或明确指引，信息密度低"
+      ],
+      "action": "修改",
+      "suggestion": "补充具体的数值、时间范围、操作步骤或参考链接。将模糊表述替换为明确指引，如将「几天」改为「3-5个工作日」。",
+      "priority": 2,
+      "priority_label": "P3-低",
+      "answer_preview": "预售商品的发货时间会在商品页面标注，以页面显示为准。"
+    }
+  ],
+  "coverage_gaps": [
+    {
+      "category": "订单管理",
+      "missing_topic": "如何查看订单状态",
+      "best_match_similarity": 0.25,
+      "best_match_entry": "KB019",
+      "suggestion": "建议新增「如何查看订单状态」相关条目",
+      "action": "新增"
+    },
+    {
+      "category": "订单管理",
+      "missing_topic": "订单超时未付款",
+      "best_match_similarity": 0.26666666666666666,
+      "best_match_entry": "KB008",
+      "suggestion": "建议新增「订单超时未付款」相关条目",
+      "action": "新增"
+    },
+    {
+      "category": "退换货",
+      "missing_topic": "七天无理由退货条件",
+      "best_match_similarity": 0.25,
+      "best_match_entry": "KB002",
+      "suggestion": "建议新增「七天无理由退货条件」相关条目",
+      "action": "新增"
+    },
+    {
+      "category": "退换货",
+      "missing_topic": "退货流程",
+      "best_match_similarity": 0.36363636363636365,
+      "best_match_entry": "KB002",
+      "suggestion": "建议新增「退货流程」相关条目",
+      "action": "新增"
+    },
+    {
+      "category": "退换货",
+      "missing_topic": "质量问题退换货",
+      "best_match_similarity": 0.3076923076923077,
+      "best_match_entry": "KB024",
+      "suggestion": "建议新增「质量问题退换货」相关条目",
+      "action": "新增"
+    },
+    {
+      "category": "支付问题",
+      "missing_topic": "付款失败处理",
+      "best_match_similarity": 0.2857142857142857,
+      "best_match_entry": "KB008",
+      "suggestion": "建议新增「付款失败处理」相关条目",
+      "action": "新增"
+    },
+    {
+      "category": "支付问题",
+      "missing_topic": "发票开具",
+      "best_match_similarity": 0.36363636363636365,
+      "best_match_entry": "KB010",
+      "suggestion": "建议新增「发票开具」相关条目",
+      "action": "新增"
+    },
+    {
+      "category": "物流配送",
+      "missing_topic": "配送时效",
+      "best_match_similarity": 0.15384615384615385,
+      "best_match_entry": "KB016",
+      "suggestion": "建议新增「配送时效」相关条目",
+      "action": "新增"
+    },
+    {
+      "category": "物流配送",
+      "missing_topic": "运费计算",
+      "best_match_similarity": 0.36363636363636365,
+      "best_match_entry": "KB002",
+      "suggestion": "建议新增「运费计算」相关条目",
+      "action": "新增"
+    },
+    {
+      "category": "物流配送",
+      "missing_topic": "物流查询",
+      "best_match_similarity": 0.3333333333333333,
+      "best_match_entry": "KB021",
+      "suggestion": "建议新增「物流查询」相关条目",
+      "action": "新增"
+    },
+    {
+      "category": "物流配送",
+      "missing_topic": "快递丢失处理",
+      "best_match_similarity": 0.3076923076923077,
+      "best_match_entry": "KB006",
+      "suggestion": "建议新增「快递丢失处理」相关条目",
+      "action": "新增"
+    },
+    {
+      "category": "商品咨询",
+      "missing_topic": "商品真伪验证",
+      "best_match_similarity": 0.3076923076923077,
+      "best_match_entry": "KB032",
+      "suggestion": "建议新增「商品真伪验证」相关条目",
+      "action": "新增"
+    },
+    {
+      "category": "商品咨询",
+      "missing_topic": "商品尺寸选择",
+      "best_match_similarity": 0.3076923076923077,
+      "best_match_entry": "KB032",
+      "suggestion": "建议新增「商品尺寸选择」相关条目",
+      "action": "新增"
+    },
+    {
+      "category": "商品咨询",
+      "missing_topic": "缺货补货通知",
+      "best_match_similarity": 0.16666666666666666,
+      "best_match_entry": "KB005",
+      "suggestion": "建议新增「缺货补货通知」相关条目",
+      "action": "新增"
+    },
+    {
+      "category": "账户安全",
+      "missing_topic": "账户被盗处理",
+      "best_match_similarity": 0.15384615384615385,
+      "best_match_entry": "KB022",
+      "suggestion": "建议新增「账户被盗处理」相关条目",
+      "action": "新增"
+    },
+    {
+      "category": "优惠活动",
+      "missing_topic": "积分规则",
+      "best_match_similarity": 0.16666666666666666,
+      "best_match_entry": "KB033",
+      "suggestion": "建议新增「积分规则」相关条目",
+      "action": "新增"
+    },
+    {
+      "category": "售后服务",
+      "missing_topic": "保修政策",
+      "best_match_similarity": 0.36363636363636365,
+      "best_match_entry": "KB032",
+      "suggestion": "建议新增「保修政策」相关条目",
+      "action": "新增"
+    },
+    {
+      "category": "售后服务",
+      "missing_topic": "维修申请流程",
+      "best_match_similarity": 0.3076923076923077,
+      "best_match_entry": "KB003",
+      "suggestion": "建议新增「维修申请流程」相关条目",
+      "action": "新增"
+    },
+    {
+      "category": "会员权益",
+      "missing_topic": "会员权益说明",
+      "best_match_similarity": 0.3076923076923077,
+      "best_match_entry": "KB013",
+      "suggestion": "建议新增「会员权益说明」相关条目",
+      "action": "新增"
+    },
+    {
+      "category": "会员权益",
+      "missing_topic": "积分获取方式",
+      "best_match_similarity": 0.26666666666666666,
+      "best_match_entry": "KB009",
+      "suggestion": "建议新增「积分获取方式」相关条目",
+      "action": "新增"
+    },
+    {
+      "category": "发票相关",
+      "missing_topic": "增值税专票",
+      "best_match_similarity": 0.16666666666666666,
+      "best_match_entry": "KB010",
+      "suggestion": "建议新增「增值税专票」相关条目",
+      "action": "新增"
+    }
+  ]
+}
